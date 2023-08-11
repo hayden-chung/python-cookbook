@@ -47,5 +47,3 @@ for a_key in a:
 
 
 print(overlapping_values)
-
-

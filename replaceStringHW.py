@@ -3,8 +3,6 @@ text = 'yeah, but no, but yeah, but no, but yeah awdoij'
 # if letter == 'y'
 
 def replace(text, find, replace):
-    front_text = ''
-    last_text = ''
     new_text = ''
     current_char_count = 0
     text_char_count = len(find)
@@ -12,8 +10,6 @@ def replace(text, find, replace):
 
     end_of_sentence_not_find = 0
     start_of_sentence_not_find = 0
-
-    run = True
 
     for i in range(len(text)):
     
@@ -27,12 +23,10 @@ def replace(text, find, replace):
             current_char_count = 0 
             end_of_sentence_not_find = i+1
 
-        if current_char_count == 4: # reset current char count to 0 as word has been found. 
-            current_char_count = 0
-            print('start_of_sentence_not_find', start_of_sentence_not_find, 'end_of_sentence_not_find', end_of_sentence_not_find)
-            
-            new_text = new_text + text[start_of_sentence_not_find:end_of_sentence_not_find] + 'yep'  
-            print('new text:', new_text)
+        if current_char_count == text_char_count: # reset current char count to 0 as word has been found. 
+            current_char_count = 0            
+            new_text = new_text + text[start_of_sentence_not_find:end_of_sentence_not_find] + replace
+            print(new_text)
             start_of_sentence_not_find = i+1
 
     new_text = new_text + text[start_of_sentence_not_find:]
@@ -44,4 +38,4 @@ def replace(text, find, replace):
             
 
 
-replace(text, 'yeah', 'yep') 
+replace(text, 'but', 'and') 

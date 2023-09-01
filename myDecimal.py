@@ -32,7 +32,9 @@ class MyDecimal:
     def print(self):
         pass
 
-a = MyDecimal('10.5')
+a = MyDecimal('10.1293817319832')
 b = MyDecimal('5.23')
 c= a.plus(b)
 print('final', c)
+
+
